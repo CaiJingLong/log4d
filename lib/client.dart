@@ -4,13 +4,14 @@ import 'package:log4d/src/entity/log.dart';
 
 class Log4dClient {
   int port;
+  String host;
 
   WebSocket ws;
 
-  Log4dClient({this.port = 8899});
+  Log4dClient({this.port = 8899, this.host = "localhost"});
 
   Future connect() async {
-    ws = await WebSocket.connect("ws://localhost:8899");
+    ws = await WebSocket.connect("ws://$host:8899");
     ws.listen((data) {
       print("receive: $data");
     });

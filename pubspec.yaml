@@ -17,4 +17,5 @@ dev_dependencies:
   test: ^1.0.0
 
 executables:
-  log4j:
+  log4d:
+  log4d_client:

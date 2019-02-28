@@ -1,5 +1,17 @@
 # log4d
 
+A dart logging tool.
+
+Create a Server with shell.
+
+And use `dart` code to create a client.
+
+## Document
+
+Server document
+
+
+
 ## LICENSE
 
 the package under MIT

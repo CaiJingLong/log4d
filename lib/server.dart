@@ -33,7 +33,7 @@ class Log4dServer {
 
     if (outpath != null) this.logFile = File(outpath);
 
-    if (!logFile.existsSync()) {
+    if (logFile?.existsSync() == false) {
       logFile.createSync(recursive: true);
     }
 

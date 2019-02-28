@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:args/args.dart';
 import 'package:log4d/client.dart';
 import 'package:log4d/src/entity/log.dart';
@@ -12,6 +11,21 @@ main(List<String> args) async {
     defaultsTo: "8899",
     help: "port with server",
   );
+
+  parser.addFlag(
+    "help",
+    abbr: 'h',
+    help: "show help info",
+    defaultsTo: false,
+  );
+
+  parser.addOption(
+    "host",
+    abbr: "t",
+    defaultsTo: "localhost",
+    help: "host with server",
+  );
+
   parser.addOption(
     "level",
     abbr: 'l',
@@ -26,6 +40,11 @@ main(List<String> args) async {
   );
 
   var result = parser.parse(args);
+
+  if (result["help"] == true) {
+    print(parser.usage);
+    return;
+  }
 
   var port = int.parse(result["port"]);
 

@@ -7,14 +7,9 @@ main(List<String> args) {
   parser.addOption('output', abbr: 'o', help: "output path");
   parser.addOption('port', abbr: 'p', help: "server port", defaultsTo: "8899");
   parser.addFlag('help', abbr: "h", help: "usage");
-  parser.addFlag('server', abbr: "s", help: "open the server");
   parser.addFlag('console',
       abbr: "c", help: "show log in console", defaultsTo: true);
 
-  if (args.isEmpty) {
-    print(parser.usage);
-    return;
-  }
   ArgResults results;
   try {
     results = parser.parse(args);
@@ -32,12 +27,10 @@ main(List<String> args) {
 
   int port = int.tryParse(results["port"]);
 
-  if (results["server"]) {
-    var server = log4d.Log4dServer(
-      outpath: outputPath,
-      port: port,
-      showConsole: results["console"],
-    );
-    server.serve();
-  }
+  var server = log4d.Log4dServer(
+    outpath: outputPath,
+    port: port,
+    showConsole: results["console"],
+  );
+  server.serve();
 }
