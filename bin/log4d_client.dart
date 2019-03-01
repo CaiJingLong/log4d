@@ -1,6 +1,5 @@
 import 'package:args/args.dart';
-import 'package:log4d/client.dart';
-import 'package:log4d/src/entity/log.dart';
+import 'package:log4d/log4d.dart';
 
 main(List<String> args) async {
   var parser = ArgParser();

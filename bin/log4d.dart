@@ -1,5 +1,4 @@
 import 'package:log4d/log4d.dart' as log4d;
-import 'package:log4d/server.dart' as log4d;
 import 'package:args/args.dart';
 
 main(List<String> args) {

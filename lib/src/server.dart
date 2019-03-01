@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:log4d/src/entity/log.dart';
@@ -7,7 +6,6 @@ import 'package:log4d/src/dye.dart';
 
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
 
 class Log4dServer {
   int port;
@@ -41,7 +39,7 @@ class Log4dServer {
   }
 
   void serve() async {
-    var handler = webSocketHandler((WebSocketChannel channel) {
+    var handler = webSocketHandler((channel) {
       channel.stream
           .asBroadcastStream()
           .listen((event) => _onListen(channel, event))
@@ -66,7 +64,7 @@ class Log4dServer {
     Log.success(text);
   }
 
-  void _onListen(WebSocketChannel channel, event) {
+  void _onListen(channel, event) {
     if (event is String) {
       var entity = LogEntity.fromString(event);
 
