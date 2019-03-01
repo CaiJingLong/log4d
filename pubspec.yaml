@@ -1,6 +1,6 @@
 name: log4d
-description: A sample command-line application.
-version: 1.0.1
+description: A log library. Open command-line server application. Support as package. Can help save your flutter or dart log to file. 
+version: 1.0.2
 homepage: https://github.com/CaiJingLong/log4d
 author: Caijinglong <cjl_spy@163.com>
 
