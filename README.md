@@ -1,5 +1,9 @@
 # log4d
 
+[![pub package](https://img.shields.io/pub/v/log4d.svg)](https://pub.dartlang.org/packages/log4d)
+[![GitHub stars](https://img.shields.io/github/stars/caijinglong/log4d.svg?style=social&label=Stars)](https://github.com/caijinglong/log4d)
+![GitHub](https://img.shields.io/github/license/caijinglong/log4d.svg)
+
 A dart logging tool.
 
 Create a Server with shell.
