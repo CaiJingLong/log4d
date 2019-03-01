@@ -9,12 +9,15 @@ class LogEntity {
 
   bool showColor = true;
 
+  bool force = false;
+
   Map<String, dynamic> toMap() {
     return {
       "msg": msg,
       "level": level.index,
       "showTime": showTime,
       "showColor": showColor,
+      "force": force,
     };
   }
 
@@ -27,6 +30,7 @@ class LogEntity {
     this.level = Level.debug,
     this.showTime = true,
     this.showColor: true,
+    this.force = false,
   });
 
   factory LogEntity.fromString(String jsonString) {
@@ -37,6 +41,7 @@ class LogEntity {
         level: Level.values[(map["level"] ?? 0)],
         showTime: map["showTime"] ?? true,
         showColor: map["showColor"] ?? true,
+        force: map["force"] ?? false,
       );
     } on Error {
       return null;

@@ -94,7 +94,9 @@ class Log4dServer {
         return new DateTime.now().toString().substring(11, 19);
       }
 
-      if (entity.showTime && entity.showColor) {
+      if (entity.force) {
+        logText = entity.msg;
+      } else if (entity.showTime && entity.showColor) {
         logText = color("[${color(dt())}] ${entity.msg}");
       } else if (entity.showTime) {
         logText = "[${dt()}] ${entity.msg}";

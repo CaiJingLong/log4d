@@ -8,7 +8,10 @@ class Log4dClient {
 
   WebSocket ws;
 
-  Log4dClient({this.port = 8899, this.host = "localhost"});
+  Log4dClient({
+    this.port = 8899,
+    this.host = "localhost",
+  });
 
   Future connect() async {
     ws = await WebSocket.connect("ws://$host:8899");
@@ -20,8 +23,17 @@ class Log4dClient {
   void sendMsg(
     String msg, {
     Level level = Level.debug,
+    bool force = false,
+    bool showColor = true,
+    bool showTime = true,
   }) {
-    var entity = LogEntity(msg: msg, level: level);
+    var entity = LogEntity(
+      msg: msg,
+      level: level,
+      force: force,
+      showColor: showColor,
+      showTime: showTime,
+    );
     ws?.add(entity.toJson());
   }
 

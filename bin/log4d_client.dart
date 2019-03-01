@@ -18,9 +18,16 @@ main(List<String> args) async {
     defaultsTo: false,
   );
 
+  parser.addFlag(
+    "time",
+    abbr: 't',
+    help: "show time",
+    defaultsTo: true,
+  );
+
   parser.addOption(
     "host",
-    abbr: "t",
+    abbr: "s",
     defaultsTo: "localhost",
     help: "host with server",
   );
@@ -36,6 +43,13 @@ main(List<String> args) async {
       "w": "warning",
       "e": "error",
     },
+  );
+
+  parser.addFlag(
+    "force",
+    abbr: 'f',
+    defaultsTo: false,
+    help: 'if true, color,level,time will be ignore.',
   );
 
   var result = parser.parse(args);
@@ -59,12 +73,21 @@ main(List<String> args) async {
     level = Level.debug;
   }
 
-  var client = Log4dClient(port: port);
+  var force = result["force"];
+  var showTime = result["time"];
+  var host = result["host"];
+
+  var client = Log4dClient(port: port, host: host);
   await client.connect();
 
   var msg = result.rest;
   msg.forEach((arg) {
-    client.sendMsg(arg, level: level);
+    client.sendMsg(
+      arg,
+      level: level,
+      showTime: showTime,
+      force: force,
+    );
   });
 
   client.disconnect();
