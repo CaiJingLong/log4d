@@ -1,3 +1,9 @@
+## 1.0.3
+
+fix:
+
+- replace `:` to `=`
+
 ## 1.0.2
 
 format code

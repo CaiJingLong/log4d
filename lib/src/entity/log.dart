@@ -29,7 +29,7 @@ class LogEntity {
     this.msg,
     this.level = Level.debug,
     this.showTime = true,
-    this.showColor: true,
+    this.showColor = true,
     this.force = false,
   });
 
