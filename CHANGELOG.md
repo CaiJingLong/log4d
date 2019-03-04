@@ -1,3 +1,9 @@
+## 1.0.4
+
+fix:
+
+- add entity bug
+
 ## 1.0.3
 
 fix:

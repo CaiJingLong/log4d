@@ -38,7 +38,7 @@ class Log4dClient {
   }
 
   void sendEntity(LogEntity entity) {
-    ws?.add(entity);
+    ws?.add(entity.toJson());
   }
 
   void disconnect() {
