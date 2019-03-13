@@ -12,7 +12,7 @@ And use `dart` code to create a client.
 
 ## Document
 
-[Server document](https://github.com/CaiJingLong/log4d-doc/blob/master/SUMMARY.md)
+[Document](https://github.com/CaiJingLong/log4d-doc/blob/master/SUMMARY.md)
 
 [Gitbook Version](https://caijinglong.gitbooks.io/document-with-log4d/content/)
 
