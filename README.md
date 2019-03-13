@@ -18,7 +18,7 @@ And use `dart` code to create a client.
 
 ## LICENSE
 
-the package under MIT
+the package under BSD-3
 
 some copy from other library
 
